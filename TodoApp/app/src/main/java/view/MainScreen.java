@@ -370,6 +370,10 @@ public class MainScreen extends javax.swing.JFrame {
             case 3:
                 taskController.update(task);
                 break;
+            case 4:
+                taskController.update(task);
+                
+                break;
             case 5:
                 taskController.removeById(task.getId());
                 tasksModel.getTasks().remove(task);

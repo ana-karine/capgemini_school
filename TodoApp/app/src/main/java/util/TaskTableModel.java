@@ -4,6 +4,8 @@
  */
 package util;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,14 +31,15 @@ public class TaskTableModel extends AbstractTableModel {
         return columns[columnIndex];
     }
     
-    // habilitando edição na coluna de índice 3 (Tarefa concluída)
-    public boolean isCellEditable(int rowIndex, int columnIndex) {
-//        if(columnIndex == 3)
-//            return true;
-//        else
-//            return false;
-
-        return columnIndex == 3;
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {  
+        /*
+         *
+         * Essa implementação retornará true se o columnIndex estiver 
+         * entre 0 e 3 (inclusive), indicando que as células dessas 
+         * colunas são editáveis. 
+        */
+        return 0 <= columnIndex && columnIndex <= 3;
     }
 
     @Override
@@ -66,34 +69,52 @@ public class TaskTableModel extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         
         switch(columnIndex) {
-            case 0:
+            case 0 -> {
                 return tasks.get(rowIndex).getName();
-            case 1:
+            }
+            case 1 -> {
                 return tasks.get(rowIndex).getDescription();
-            case 2:
+            }
+            case 2 -> {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 return dateFormat.format(tasks.get(rowIndex).getDeadline());
-            case 3:
+            }
+            case 3 -> {
                 return tasks.get(rowIndex).isIsCompleted();
-            case 4:
+            }
+            case 4 -> {
                 return "";
-            case 5:
+            }
+            case 5 -> {
                 return "";
-            default:    
+            }    
+            default -> {
                 return "Dados não encontrados";
+            }
         }
     }
     
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-        
-        /*
-         * O método usa o rowIndex para acessar a lista de tarefas (tasks) e 
-         * obter a tarefa na linha correspondente.
-         * Em seguida, chama o método setIsCompleted na tarefa, passando o novo
-         * valor (aValue) como um booleano. 
-        */
-        tasks.get(rowIndex).setIsCompleted((boolean) aValue);
+                       
+        switch(columnIndex) {
+            case 0 -> tasks.get(rowIndex).setName((String) aValue);
+            case 1 -> tasks.get(rowIndex).setDescription((String) aValue);
+            case 2 -> {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                
+                if (aValue instanceof String stringValue) {
+                    try {
+                        tasks.get(rowIndex).setDeadline((Date) dateFormat.parse(stringValue));
+                    } catch (ParseException e) {
+                        throw new RuntimeException("Erro durante a conversão de String para Date "
+                                + "" + e.getMessage(), e);
+                    }
+                }
+                
+            }
+            case 3 -> tasks.get(rowIndex).setIsCompleted((boolean) aValue);
+        }
     }
 
     public String[] getColumns() {
