@@ -29,7 +29,7 @@ public class DeadlineColumnCellRenderer extends DefaultTableCellRenderer {
         label = (JLabel) super.getTableCellRendererComponent(table, value,
                 isSelected, hasFocus, row, col);
 
-        // Centralizando as células
+        // Centralizando o conteúdo das células
         label.setHorizontalAlignment(JLabel.CENTER);
 
         /*
@@ -67,7 +67,7 @@ public class DeadlineColumnCellRenderer extends DefaultTableCellRenderer {
 
         float alpha = 0.5f; // Valor de transparência (0.0f - totalmente transparente, 1.0f - totalmente opaco)
         
-        // Customizando as células
+        // Customizando o background das células
         if (deadline.after(currentDateWithoutTime)) {
             label.setBackground(new Color(0, 255, 0, Math.round(alpha * 255))); // Verde com transparência
         } else if (deadline.before(currentDateWithoutTime)) {
@@ -75,6 +75,7 @@ public class DeadlineColumnCellRenderer extends DefaultTableCellRenderer {
         } else {
             label.setBackground(new Color(255, 255, 0, Math.round(alpha * 255))); // Amarelo com transparência
         }
+        
         return label;
     }
 
