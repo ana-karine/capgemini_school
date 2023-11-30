@@ -22,7 +22,7 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
     public ProjectDialogScreen(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+        hideErrorField();
         controller = new ProjectController();
     }
 
@@ -44,6 +44,7 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
         jLabelDescription = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaDescription = new javax.swing.JTextArea();
+        jLabelNameError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -101,17 +102,21 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
         jTextAreaDescription.setRows(5);
         jScrollPane1.setViewportView(jTextAreaDescription);
 
+        jLabelNameError.setForeground(java.awt.Color.red);
+        jLabelNameError.setText("Campo de nome obrigatório");
+
         javax.swing.GroupLayout jPanelProjectLayout = new javax.swing.GroupLayout(jPanelProject);
         jPanelProject.setLayout(jPanelProjectLayout);
         jPanelProjectLayout.setHorizontalGroup(
             jPanelProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelProjectLayout.createSequentialGroup()
+            .addGroup(jPanelProjectLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jLabelName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextFieldName, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelDescription, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+                    .addComponent(jLabelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextFieldName)
+                    .addComponent(jLabelDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelNameError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanelProjectLayout.setVerticalGroup(
@@ -121,10 +126,12 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
                 .addComponent(jLabelName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelNameError)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jLabelDescription)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -172,7 +179,11 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
 
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(rootPane, "O campo nome é obrigatório");
+                hideErrorField();
+                
+                if(jTextFieldName.getText().isEmpty()) {
+                    jLabelNameError.setVisible(true);
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
@@ -224,6 +235,7 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelDescription;
     private javax.swing.JLabel jLabelName;
+    private javax.swing.JLabel jLabelNameError;
     private javax.swing.JLabel jLabelToolbarSave;
     private javax.swing.JLabel jLabelToolbarTitle;
     private javax.swing.JPanel jPanelProject;
@@ -232,4 +244,13 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
     private javax.swing.JTextArea jTextAreaDescription;
     private javax.swing.JTextField jTextFieldName;
     // End of variables declaration//GEN-END:variables
+
+    public void hideErrorField() {
+        jLabelNameError.setVisible(false);
+    }
+    
+    public boolean isFieldValid() {
+        return (!jTextFieldName.getText().isEmpty());
+    }
+
 }
