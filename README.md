@@ -69,21 +69,22 @@ Definição do projeto desenvolvido no curso Lógica de Programação e Algoritm
 * criação do conceito de `conta` e `usuário`;
 * construção de uma `tela de login`;
 * permitir a alteração dos dados da Tarefa, abrindo a `tela de tarefas` com os dados carregados, ao clicar no botão de editar.
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
- 
+
+**Telas do aplicativo:**
+
+* Tela principal (com tarefas):
+
+<img src="/images/main1.png">
+
+* Tela principal (sem tarefas):
+
+<img src="/images/main2.png">
+
+* Tela de cadastro de Projeto:
+
+<img src="/images/project.png">
+
+* Tela de cadastro de Tarefa:
+
+<img src="/images/task.png">
+
