@@ -48,7 +48,7 @@ Definição do projeto desenvolvido no curso Lógica de Programação e Algoritm
 
 **Etapas do desenvolvimento:**
 
-* criação do banco de dados 
+* criação do banco de dados ([backup do banco de dados](https://github.com/ana-karine/capgemini_school/blob/main/database/todoApp.sql))
 * criação das classes de modelo
 * criação da conexão com o banco de dados
 * criação das classes de controle (acesso aos dados do banco)
