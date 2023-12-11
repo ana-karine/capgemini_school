@@ -1,8 +1,8 @@
 <h1 align="center"> ToDo App </h1>
 
-<div align="center">
+<p align="center">
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Gradle](https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white) ![NetBeans IDE](https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)    
-</div>
+</p>
 
 Projeto desenvolvido no curso Lógica de Programação e Algoritmos III - [Programa START da Capgemini](https://startcapgemini.com.br/)
 
@@ -42,23 +42,23 @@ Aplicação para gerenciamento de projetos e as tarefas envolvidas nos mesmos.
 
 * Tela/cadastro de projetos:
 
-<img src="/images/create_projects.gif">
+<img src="./images/create_projects.gif">
 
 * Tela/cadastro de tarefas:
 
-<img src="/images/create_tasks.gif">
+<img src="./images/create_tasks.gif">
 
 * Atualização de tarefas (campos `Nome`, `Descrição` e `Prazo`):
 
-<img src="/images/update_tasks.gif">
+<img src="./images/update_tasks.gif">
 
 * Atualização de tarefas (campo `Tarefa concluída`):
 
-<img src="/images/update_tasks_status.gif">
+<img src="./images/update_tasks_status.gif">
 
 * Exclusão de tarefas:
 
-<img src="/images/delete_tasks.gif">
+<img src="./images/delete_tasks.gif">
 
 ## Tecnologias Utilizadas
 
