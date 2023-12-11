@@ -36,7 +36,7 @@ Aplicação para gerenciamento de projetos e as tarefas envolvidas nos mesmos.
 
 * Tela principal (com e sem tarefas):
 
-<img src="/images/general.gif">
+<img src="./images/general.gif">
 
 * Tela/cadastro de projetos:
 
