@@ -1,6 +1,8 @@
 <h1 align="center"> ToDo App </h1>
 
+<div align="center">
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Gradle](https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white) ![NetBeans IDE](https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)    
+</div>
 
 Projeto desenvolvido no curso Lógica de Programação e Algoritmos III - [Programa START da Capgemini](https://startcapgemini.com.br/)
 
@@ -79,7 +81,7 @@ git clone https://github.com/ana-karine/capgemini_school.git
 
 3. Siga todos os passos referentes ao Banco de Dados
 
-4. No NetBeans, executar o arquivo `MainScreen.java` (localizado no diretório /capgemini_school/todo_app/TodoApp/app/src/main/java/view)
+4. No NetBeans, executar o arquivo `MainScreen.java` (localizado no diretório `/capgemini_school/todo_app/TodoApp/app/src/main/java/view`)
 
 **Banco de Dados:**
 
