@@ -24,10 +24,10 @@ ng new <nome_projeto>
 npm start
 ```
 
-- visualizar projeto 
+- visualizar projeto <br>
 Clicar no local onde o projeto está sendo executado (ex.: http://localhost:4200/)
 
-- encerrar execução do projeto
+- encerrar execução do projeto <br>
 Você pode parar a execução da aplicação no terminal com o atalho "Ctrl + C"
 
 
@@ -43,7 +43,7 @@ node_modules/rxjs/internal/types.d.ts(91,88): error TS1005: ';' expected.
 node_modules/rxjs/internal/types.d.ts(91,92): error TS1109: Expression expected.
 ```
 
-Passo 1: vá para `package.json` e modifique "rxjs": "^6.0.0" para "rxjs": "6.0.0"
+Passo 1: vá para `package.json` e modifique "rxjs": "^6.0.0" para "rxjs": "6.0.0" <br>
 Passo 2: Executar `npm install` dentro da pasta do projeto
 
 - Caso apareça o erro abaixo siga o passo 3 e torne a executar o projeto
