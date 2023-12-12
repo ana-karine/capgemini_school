@@ -1,8 +1,18 @@
 <h2>Aprofundando os conhecimentos sobre templates</h2>
 
+<!-- Property Binding: é uma forma de associar propriedades entre 
+  o template (arquivo html) e o component (arquivo typescript). 
+  Essa associação pode ser feita utilizando a sintaxe dos colchetes 
+  ou das chaves duplas (interpolação) -->
+<img [src]="urlImagem" width="200" height="300">
+
 <!-- Interpolação -->
 <p>{{ nome }}</p>
 
 <!-- Pipes -->
 <p>Nome: {{ nome | uppercase }}</p>
 <p>Data de nascimento: {{ dataNascimento | date: "dd/MM/yyyy" }}</p>
+
+<!-- Event Binding: permite que um evento do DOM seja atribuído a 
+  um método do componente -->
+<button (click)="mostrarDataNascimento()" type="button">Mostrar data de nascimento</button>
