@@ -8,15 +8,18 @@ Curso pertencente a Trilha Java - [Programa START da Capgemini](https://startcap
 
 * Ubuntu 22.04.3 LTS
 * Visual Studio Code 1.85.0
-* Node.js 12.22.9
-* NPM 8.5.1
-* Angular CLI 6.0.7
+* Node: 18.19.0
+* Package Manager: npm 10.2.3
+* Angular CLI: 17.0.6
+* Angular: 8.2.14
 
 ## Comandos 
 
+### Projeto
+
 - criar projeto
 ```
-ng new <nome_projeto>
+ng new <nome-projeto>
 ```
 
 - executar projeto (dentro da pasta do projeto)
@@ -56,3 +59,24 @@ Passo 3:
 sudo kill $(sudo lsof -t -i:4200)
 ```
 
+### Componente
+
+- criar componente
+```
+ng generate component <nome-componente>
+```
+
+- mostrar componente na tela <br>
+Incluir no arquivo `app.component.html` o nome do componente entre tags html
+```
+<app-nome-componente></app-nome-componente>
+```
+
+### Pipe
+
+- criar pipe
+```
+ng generate pipe <NomePipe>
+```
+
+https://2264091154-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LAFAFKEinJy_kTY14OC%2F-M2Ek3pEu7Nhldg0XSl3%2F-M2Ek6cK8N_T8l6i1AKC%2Fcomponent_angular2.png?generation=1584033476043829&alt=media
