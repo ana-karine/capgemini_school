@@ -13,8 +13,8 @@
   "dependencies": {
     "@angular/animations": "^17.0.6",
     "@angular/common": "^17.0.6",
-    "@angular/compiler": "^15.2.10",
-    "@angular/core": "^15.2.10",
+    "@angular/compiler": "^16.2.12",
+    "@angular/core": "^16.2.12",
     "@angular/forms": "^17.0.6",
     "@angular/http": "^7.2.16",
     "@angular/platform-browser": "^17.0.6",
@@ -22,13 +22,13 @@
     "@angular/router": "^17.0.6",
     "core-js": "^2.5.4",
     "rxjs": "6.6.7",
-    "zone.js": "^0.11.8"
+    "zone.js": "^0.13.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.10",
     "@angular/cli": "~17.0.6",
     "@angular/compiler-cli": "^17.0.6",
-    "@angular/language-service": "^15.2.10",
+    "@angular/language-service": "^16.2.12",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
