@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "fundamentos"
+  "defaultProject": "fundamentos",
+  "cli": {
+    "analytics": "b00f072c-ef92-4865-9914-79294710f154"
+  }
 }
