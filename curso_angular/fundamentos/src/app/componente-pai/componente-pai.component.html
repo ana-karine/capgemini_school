@@ -1,0 +1,7 @@
+<div id="pai">
+    <h2>Componente PAI:</h2>
+    <p>Sobrenome que está definido no componente pai: {{ sobrenomePai }}</p>
+    <app-componente-filho #filho [sobrenomeFilho]="sobrenomePai"></app-componente-filho>
+    <p>Nome inserido no componente filho: {{ filho.nomeFilho }}</p>
+    <p>O nome completo é: {{ filho.nomeFilho }} {{ filho.sobrenomeFilho }}</p>
+</div>
