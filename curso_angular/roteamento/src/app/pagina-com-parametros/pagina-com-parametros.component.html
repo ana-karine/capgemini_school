@@ -1,0 +1,10 @@
+<!-- http://localhost:4200/pagina-com-parametros/4 -->
+
+<p>Parâmetro da rota: {{ id }}</p>
+
+<!-- http://localhost:4200/pagina-com-parametros/4?nome=Ana&idade=18 -->
+
+<!-- http://localhost:4200/pagina-com-parametros/4?nome=Ana -->
+<p *ngIf="nome">Query Param de nome: {{ nome }}</p>
+<!-- http://localhost:4200/pagina-com-parametros/4?idade=18 -->
+<p *ngIf="idade">Query Param de idade: {{ idade }}</p>
