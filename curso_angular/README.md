@@ -46,32 +46,19 @@ npm i @angular/router
 ng generate module <nome-modulo> --flat --module=app.module
 ```
 
-- criar módulo com lazy loading
+- criar módulo com 'lazy loading'
 ```
 ng generate module <nome-modulo> --route=<nome-da-rota> --module=app.module
 ```
 
 **Corrigindo problemas**
 
-- Caso apareça o erro abaixo siga os passos 1 e 2 e torne a executar o projeto
-```
-ERROR in node_modules/rxjs/internal/types.d.ts(90,44): error TS1005: ';' expected.
-node_modules/rxjs/internal/types.d.ts(90,74): error TS1005: ';' expected.
-node_modules/rxjs/internal/types.d.ts(90,77): error TS1109: Expression expected.
-node_modules/rxjs/internal/types.d.ts(91,52): error TS1005: ';' expected.
-node_modules/rxjs/internal/types.d.ts(91,88): error TS1005: ';' expected.
-node_modules/rxjs/internal/types.d.ts(91,92): error TS1109: Expression expected.
-```
-
-Passo 1: vá para `package.json` e modifique "rxjs": "^6.6.7" para "rxjs": "6.6.7" <br>
-Passo 2: Executar `npm install` dentro da pasta do projeto
-
-- Caso apareça o erro abaixo siga o passo 3 e torne a executar o projeto
+- Caso apareça o erro abaixo siga o passo 1 e torne a executar o projeto
 ```
 Port 4200 is already in use. Use '--port' to specify a different port.
 ```
 
-Passo 3: 
+Passo 1: 
 ```
 sudo kill $(sudo lsof -t -i:4200)
 ```
@@ -93,19 +80,19 @@ Incluir no arquivo `app.component.html` o nome do componente entre tags html
 
 - criar pipe
 ```
-ng generate pipe <NomePipe>
+ng generate pipe <nome-pipe>
 ```
 
 ### Serviço
 
-- criar pipe
+- criar serviço
 ```
-ng generate service <NomeServico>
+ng generate service <nome-servico>
 ```
 
 ### Autenticação
 
--- criar guard
+- criar guard
 ```
 ng generate guard <nome-guard>
 ```
