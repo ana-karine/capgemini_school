@@ -20,7 +20,7 @@ Curso pertencente a Trilha Java - [Programa START da Capgemini](https://startcap
 
 - criar projeto
 ```
-ng new <nome-projeto>
+ng new <nome-projeto> --no-standalone
 ```
 
 - executar projeto (dentro da pasta do projeto)
@@ -34,6 +34,22 @@ Clicar no local onde o projeto está sendo executado (ex.: http://localhost:4200
 - encerrar execução do projeto <br>
 Você pode parar a execução da aplicação no terminal com o atalho "Ctrl + C"
 
+**Roteamento**
+
+- adicionar a biblioteca `router`
+```
+npm i @angular/router
+```
+
+- criar módulo responsável pelo roteamento
+```
+ng generate module <nome-modulo> --flat --module=app.module
+```
+
+- criar módulo com lazy loading
+```
+ng generate module <nome-modulo> --route=<nome-da-rota> --module=app.module
+```
 
 **Corrigindo problemas**
 
@@ -85,4 +101,11 @@ ng generate pipe <NomePipe>
 - criar pipe
 ```
 ng generate service <NomeServico>
+```
+
+### Autenticação
+
+-- criar guard
+```
+ng generate guard <nome-guard>
 ```
