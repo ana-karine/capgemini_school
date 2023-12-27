@@ -10,7 +10,7 @@ import { CursoService } from './curso.service';
 export class CursoComponent implements OnInit {
 
   // vetor de cursos
-  vetor!:Curso[];
+  vetor!: Curso[];
 
   // objeto da classe Curso
   curso = new Curso();
@@ -25,8 +25,22 @@ export class CursoComponent implements OnInit {
   }
 
   // cadastrar
-  cadastrar():void {
-    alert("cadastrar");
+  cadastrar() {
+    this.cursoService.cadastrarCurso(this.curso).subscribe(
+      (res: Curso[]) => {
+
+        // adicionando dados ao vetor
+        this.vetor = res;
+
+        // limpar atributos
+        this.curso.nomeCurso = "";
+        this.curso.valorCurso = 0;
+
+        // atualizar a listagem
+        this.selecionar();
+        
+      }
+    )
   } 
 
   // selecionar
