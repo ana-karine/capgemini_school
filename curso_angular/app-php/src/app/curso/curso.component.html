@@ -18,6 +18,6 @@
     <tr *ngFor="let v of vetor">
         <td *ngIf="v">{{ v.nomeCurso }}</td>
     <td *ngIf="v">{{ v.valorCurso }}</td>
-        <td><button>Selecionar</button></td>
+        <td><button (click)="selecionarCurso(v)">Selecionar</button></td>
     </tr>
 </table>

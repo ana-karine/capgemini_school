@@ -24,6 +24,15 @@ export class CursoComponent implements OnInit {
     this.selecionar();
   }
 
+  // selecionar
+  selecionar() {
+    this.cursoService.obterCursos().subscribe(
+      (res: Curso[]) => {
+        this.vetor = res;
+      }
+    )
+  }
+
   // cadastrar
   cadastrar() {
     this.cursoService.cadastrarCurso(this.curso).subscribe(
@@ -42,23 +51,43 @@ export class CursoComponent implements OnInit {
     )
   } 
 
-  // selecionar
-  selecionar() {
-    this.cursoService.obterCursos().subscribe(
+  // remover
+  remover() {
+    this.cursoService.removerCurso(this.curso).subscribe(
+
       (res: Curso[]) => {
         this.vetor = res;
+
+        this.curso.nomeCurso = "";
+        this.curso.valorCurso = 0;
+
+        // atualizar listagem
+        this.selecionar();
       }
     )
   }
 
-  // alterar
-  alterar():void {
-    alert("alterar");
+  // selecionar curso específico
+  selecionarCurso(c: Curso) {
+    this.curso.idCurso = c.idCurso;
+    this.curso.nomeCurso = c.nomeCurso;
+    this.curso.valorCurso = c.valorCurso;
   }
 
-  // remover
-  remover():void {
-    alert("remover");
+  // alterar
+  alterar() {
+    this.cursoService.atualizarCurso(this.curso).subscribe(
+      
+      (res: Curso[]) => {
+
+        // atualizar vetor
+        this.vetor = res;
+
+        // limpar os valores do objeto
+        this.curso.nomeCurso = "";
+        this.curso.valorCurso = 0;
+      }
+    )
   }
 
 }

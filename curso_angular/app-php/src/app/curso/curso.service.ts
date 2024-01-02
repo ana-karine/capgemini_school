@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Curso } from './curso';
@@ -38,4 +38,43 @@ export class CursoService {
     )
   }
 
+  // remover curso
+  removerCurso(c: Curso): Observable<Curso[]>{
+    const params = new HttpParams().set("idCurso", c.idCurso!.toString());
+    console.log("params: "+params);
+
+    return this.http.delete(this.url + "excluir", { params: params }).pipe(
+      map((res) => {   
+        console.log("RES: "+res);
+        const filtro = this.vetor.filter((curso) => {
+          return +curso['idCurso']! !== +c.idCurso!;
+        })  
+        
+        return this.vetor = filtro;
+      })
+    )
+  }
+
+  // atualizar curso
+  atualizarCurso(c: Curso): Observable<Curso[]> {
+    // executa a alteração via URL
+    return this.http.put<{ cursos: Curso }>(this.url + "alterar", { cursos:c }).pipe(
+      // percorre o vetor para saber qual é o id do curso alterado
+      map((res) => {
+        console.log(res);
+        const cursoAlterado = this.vetor.find((item) => {
+          return +item['idCurso']! === +c.idCurso!;
+        });
+        
+        // altera o valor do vetor local
+        if (cursoAlterado) {
+          cursoAlterado['nomeCurso'] = c['nomeCurso'];
+          cursoAlterado['valorCurso'] = c['valorCurso'];
+        }
+        
+        // retorno
+        return this.vetor;
+      })
+    );
+  }
 }
