@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Curso } from './curso';
 import { Observable } from 'rxjs';
 
@@ -39,21 +39,21 @@ export class CursoService {
   }
 
   // remover curso
-  removerCurso(c: Curso): Observable<Curso[]>{
-    const params = new HttpParams().set("idCurso", c.idCurso!.toString());
-    console.log("params: "+params);
+  removerCurso(c: Curso): Observable<Curso[]> {
+    // modificação do objeto para incluir a propriedade 'cursos'
+    const objetoParaEnviar = { cursos: { idCurso: c.idCurso } };
 
-    return this.http.delete(this.url + "excluir", { params: params }).pipe(
-      map((res) => {   
-        console.log("RES: "+res);
+    // envio do objeto
+    return this.http.delete<{ cursos: Curso }>(this.url + "excluir", { body: objetoParaEnviar }).pipe(
+      map((res) => { 
         const filtro = this.vetor.filter((curso) => {
           return +curso['idCurso']! !== +c.idCurso!;
-        })  
-        
+        });
+
         return this.vetor = filtro;
-      })
-    )
+    }));
   }
+
 
   // atualizar curso
   atualizarCurso(c: Curso): Observable<Curso[]> {
@@ -61,7 +61,6 @@ export class CursoService {
     return this.http.put<{ cursos: Curso }>(this.url + "alterar", { cursos:c }).pipe(
       // percorre o vetor para saber qual é o id do curso alterado
       map((res) => {
-        console.log(res);
         const cursoAlterado = this.vetor.find((item) => {
           return +item['idCurso']! === +c.idCurso!;
         });

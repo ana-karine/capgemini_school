@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Curso } from './curso';
 import { CursoService } from './curso.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-curso',
@@ -41,8 +42,8 @@ export class CursoComponent implements OnInit {
         this.vetor = res;
 
         // limpar atributos
-        this.curso.nomeCurso = "";
-        this.curso.valorCurso = 0;
+        this.curso.nomeCurso = null;
+        this.curso.valorCurso = null;
 
         // atualizar a listagem
         this.selecionar();
@@ -58,8 +59,8 @@ export class CursoComponent implements OnInit {
       (res: Curso[]) => {
         this.vetor = res;
 
-        this.curso.nomeCurso = "";
-        this.curso.valorCurso = 0;
+        this.curso.nomeCurso = null;
+        this.curso.valorCurso = null;
 
         // atualizar listagem
         this.selecionar();
@@ -84,8 +85,8 @@ export class CursoComponent implements OnInit {
         this.vetor = res;
 
         // limpar os valores do objeto
-        this.curso.nomeCurso = "";
-        this.curso.valorCurso = 0;
+        this.curso.nomeCurso = null;
+        this.curso.valorCurso = null;
       }
     )
   }
