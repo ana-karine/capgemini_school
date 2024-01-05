@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class CursoService {
 
   // URL
-  url = "http://localhost/api/php/";
+  url = "http://localhost/php/";
 
   // vetor
   vetor: Curso[] = [];
