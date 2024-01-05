@@ -1,27 +1,75 @@
-# AppPhp
+<h1 align="center"> Criando APIs com Angular </h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+![XAMPP](https://a11ybadges.com/badge?logo=xampp) ![Node.js](https://a11ybadges.com/badge?logo=nodedotjs) ![Angular](https://a11ybadges.com/badge?logo=angular) ![Visual Studio Code](https://a11ybadges.com/badge?logo=visualstudiocode)
 
-## Development server
+Curso pertencente a Trilha Java - [Programa START da Capgemini](https://startcapgemini.com.br/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
 
-## Code scaffolding
+* **Front-end:** 
+  - Angular 17.0.8 (HTML, CSS, TypeScript);
+  - Node.js 21.4.0
+* **Back-end:** 
+  - XAMPP para Linux 8.2.4-0 (Apache, PHP, MySQL)
+* **IDE:** 
+  - Visual Studio Code 1.85.1
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Estrutura do Projeto 
 
-## Build
+**Banco de Dados:**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Iniciar o painel de controle do XAMPP
 
-## Running unit tests
+- se você usa um sistema de 32 bits:
+```
+sudo /opt/lampp/manager-linux.run
+```
+- se você usa um sistema de 64 bits:
+```
+sudo /opt/lampp/manager-linux-x64.run
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- na aba `Manage Servers` clicar em `Start All` 
 
-## Running end-to-end tests
+2. Acessar o aplicativo phpMyAdmin (para administração do MySQL)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+https://localhost/phpmyadmin/
+```
 
-## Further help
+3. No phpMyAdmin, importar o database `api.sql` (localizado no diretório `/capgemini_school/curso_angular/app-php/database`)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Servidor:**
+
+- após efetuar o clone do projeto, copie a pasta `/api` dentro da pasta `/htdocs` (essa pasta está localizada no diretório onde foi salvo o XAMPP);
+
+- dentro da pasta `/api/php` temos os seguintes arquivos:
+
+`.htaccess`: remove a extensão ".php" de URLs no Apache e permite que os métodos POST, GET, OPTIONS, DELETE e PUT sejam usados em solicitações CORS;
+
+`conexao.php`: conexão entre o código PHP e o banco de dados MySQL;
+
+`listar.php`: script que retorna os dados da tabela "cursos" no formato JSON;
+
+`cadastrar.php`: script que trata a inserção de dados de um novo curso no banco de dados;
+
+`alterar.php`: script que trata a atualização de dados de um curso específico no banco de dados;
+
+`excluir.php`: script que trata da exclusão de um curso específico na tabela "cursos" do  banco de dados.
+
+- URLs:
+
+`http://localhost/api/php/`: caminho para o ponto de entrada de um serviço web construído com PHP;
+
+`http://localhost/api/php/listar`: caminho para a operação de listagem de dados;
+
+`http://localhost/api/php/cadastrar`: caminho para a operação de inserção de dados;
+
+`http://localhost/api/php/alterar`: caminho para a operação de atualização de dados;
+
+`http://localhost/api/php/excluir`: caminho para a operação de exclusão de dados.
+
+**Cliente:**
+
+URL local onde a aplicação Angular está sendo executada: `http://localhost:4200` 
+
